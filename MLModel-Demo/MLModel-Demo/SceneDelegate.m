@@ -2,7 +2,7 @@
 //  SceneDelegate.m
 //  MLModel-Demo
 //
-//  Created by Gavin Xing on 2021/2/24.
+//  Created by MichaelLedger on 2021/2/24.
 //
 
 #import "SceneDelegate.h"

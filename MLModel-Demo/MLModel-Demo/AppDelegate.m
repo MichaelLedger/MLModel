@@ -2,10 +2,11 @@
 //  AppDelegate.m
 //  MLModel-Demo
 //
-//  Created by Gavin Xing on 2021/2/24.
+//  Created by MichaelLedger on 2021/2/24.
 //
 
 #import "AppDelegate.h"
+#import "MLModelTestManager.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [MLModelTestManager ml_convertJsonToModel];
+    [MLModelTestManager ml_archiveAndUnarchiveModel];
+    
     return YES;
 }
 

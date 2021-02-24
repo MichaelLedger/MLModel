@@ -17,6 +17,10 @@
 		8675D89D25E6396E00799E75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D89C25E6396E00799E75 /* main.m */; };
 		8675D8A725E6396E00799E75 /* MLModel_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D8A625E6396E00799E75 /* MLModel_DemoTests.m */; };
 		8675D8B225E6396E00799E75 /* MLModel_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D8B125E6396E00799E75 /* MLModel_DemoUITests.m */; };
+		8675D8CF25E63AC100799E75 /* MLModelTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D8CE25E63AC100799E75 /* MLModelTestManager.m */; };
+		8675D8DE25E63F9900799E75 /* NSObject+MLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D8DD25E63F9900799E75 /* NSObject+MLModel.m */; };
+		8675D8E425E64D3300799E75 /* Student.json in Resources */ = {isa = PBXBuildFile; fileRef = 8675D8E325E64D3300799E75 /* Student.json */; };
+		8675D8EA25E64F0200799E75 /* MLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675D8E925E64F0200799E75 /* MLModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,13 @@
 		8675D8AD25E6396E00799E75 /* MLModel-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MLModel-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8675D8B125E6396E00799E75 /* MLModel_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLModel_DemoUITests.m; sourceTree = "<group>"; };
 		8675D8B325E6396E00799E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8675D8CD25E63AC100799E75 /* MLModelTestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLModelTestManager.h; sourceTree = "<group>"; };
+		8675D8CE25E63AC100799E75 /* MLModelTestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLModelTestManager.m; sourceTree = "<group>"; };
+		8675D8DC25E63F9900799E75 /* NSObject+MLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLModel.h"; sourceTree = "<group>"; };
+		8675D8DD25E63F9900799E75 /* NSObject+MLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLModel.m"; sourceTree = "<group>"; };
+		8675D8E325E64D3300799E75 /* Student.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Student.json; sourceTree = "<group>"; };
+		8675D8E825E64F0200799E75 /* MLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLModel.h; sourceTree = "<group>"; };
+		8675D8E925E64F0200799E75 /* MLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,9 @@
 		8675D88625E6396C00799E75 /* MLModel-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				8675D8E225E64CF000799E75 /* Resources */,
+				8675D8CC25E63AA700799E75 /* MLModelTestManager */,
+				8675D8C225E63A6900799E75 /* MLModel */,
 				8675D88725E6396C00799E75 /* AppDelegate.h */,
 				8675D88825E6396C00799E75 /* AppDelegate.m */,
 				8675D88A25E6396C00799E75 /* SceneDelegate.h */,
@@ -138,6 +152,35 @@
 				8675D8B325E6396E00799E75 /* Info.plist */,
 			);
 			path = "MLModel-DemoUITests";
+			sourceTree = "<group>";
+		};
+		8675D8C225E63A6900799E75 /* MLModel */ = {
+			isa = PBXGroup;
+			children = (
+				8675D8DC25E63F9900799E75 /* NSObject+MLModel.h */,
+				8675D8DD25E63F9900799E75 /* NSObject+MLModel.m */,
+			);
+			name = MLModel;
+			path = ../../MLModel;
+			sourceTree = "<group>";
+		};
+		8675D8CC25E63AA700799E75 /* MLModelTestManager */ = {
+			isa = PBXGroup;
+			children = (
+				8675D8CD25E63AC100799E75 /* MLModelTestManager.h */,
+				8675D8CE25E63AC100799E75 /* MLModelTestManager.m */,
+				8675D8E825E64F0200799E75 /* MLModel.h */,
+				8675D8E925E64F0200799E75 /* MLModel.m */,
+			);
+			path = MLModelTestManager;
+			sourceTree = "<group>";
+		};
+		8675D8E225E64CF000799E75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8675D8E325E64D3300799E75 /* Student.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +288,7 @@
 				8675D89A25E6396E00799E75 /* LaunchScreen.storyboard in Resources */,
 				8675D89725E6396E00799E75 /* Assets.xcassets in Resources */,
 				8675D89225E6396C00799E75 /* Main.storyboard in Resources */,
+				8675D8E425E64D3300799E75 /* Student.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +318,9 @@
 				8675D88925E6396C00799E75 /* AppDelegate.m in Sources */,
 				8675D88C25E6396C00799E75 /* SceneDelegate.m in Sources */,
 				8675D89525E6396C00799E75 /* MLModel_Demo.xcdatamodeld in Sources */,
+				8675D8CF25E63AC100799E75 /* MLModelTestManager.m in Sources */,
+				8675D8EA25E64F0200799E75 /* MLModel.m in Sources */,
+				8675D8DE25E63F9900799E75 /* NSObject+MLModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
