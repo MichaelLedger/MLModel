@@ -10,7 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer;
+@property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer API_AVAILABLE(ios(13.0));
 
 - (void)saveContext;
 

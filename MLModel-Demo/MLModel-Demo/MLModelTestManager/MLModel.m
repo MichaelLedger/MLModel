@@ -9,6 +9,11 @@
 
 @implementation MLArchivalModel
 
+#pragma mark - NSSecureCoding
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 #pragma mark - NSCoding
 - (void)encodeWithCoder:(NSCoder *)coder {
     [self ml_modelEncodeWithCoder:coder];
@@ -19,6 +24,11 @@
         [self ml_modelInitWithCoder:coder];
     }
     return self;
+}
+
+#pragma mark - NSCopying
+- (id)copyWithZone:(NSZone *)zone {
+    return [self ml_modelCopyWithZone:zone];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MLArchivalModel : NSObject <NSCoding>
+@interface MLArchivalModel : NSObject <NSSecureCoding, NSCopying>
 
 @end
 

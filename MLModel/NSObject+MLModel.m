@@ -115,7 +115,13 @@
     for (unsigned int i = 0; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
         NSString *name = [NSString stringWithUTF8String:propertyName];
-        
+        /*
+        *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<MLStudentModel 0x6000001947c0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key XXX.'
+         */
+        NSArray <NSString *> *ignoreCharacters = [NSArray arrayWithObjects:@"hash", @"superclass", @"description", @"debugDescription", nil];
+        if ([ignoreCharacters containsObject:name]) {
+            continue;
+        }
         id value = [aDecoder decodeObjectForKey:name];
         [self setValue:value forKey:name];
     }
@@ -135,14 +141,36 @@
     for (unsigned int i = 0; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
         NSString *name = [NSString stringWithUTF8String:propertyName];
-        
-        id value = [self valueForKey:name];
-        if ([name isEqualToString:@"superclass"]) {
+        NSArray <NSString *> *ignoreCharacters = [NSArray arrayWithObjects:@"superclass", nil];
+        if ([ignoreCharacters containsObject:name]) {
             continue;
         }
+        id value = [self valueForKey:name];
         [aCoder encodeObject:value forKey:name];
     }
     free(propertyList);
+}
+
+// Copy
+- (id)ml_modelCopyWithZone:(NSZone *)zone {
+    id newObject = [[[self class] allocWithZone:zone] init];
+    unsigned int count;
+    objc_property_t *propertyList = class_copyPropertyList([self class], &count);
+    for (unsigned int i = 0; i < count; i++) {
+        const char *propertyName = property_getName(propertyList[i]);
+        NSString *name = [NSString stringWithUTF8String:propertyName];
+        /*
+         *** Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<MLStudentModel 0x6000039fcf40> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key XXX.'
+         */
+        NSArray <NSString *> *ignoreCharacters = [NSArray arrayWithObjects:@"hash", @"superclass", @"description", @"debugDescription", nil];
+        if ([ignoreCharacters containsObject:name]) {
+            continue;
+        }
+        id value = [self valueForKey:name];
+        [newObject setValue:value forKey:name];
+    }
+    free(propertyList);
+    return newObject;
 }
 
 @end
